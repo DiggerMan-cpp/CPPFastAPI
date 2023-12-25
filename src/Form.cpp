@@ -422,7 +422,7 @@
     return serializedData.str();
 }
 
-[[maybe_unused]] Form Form::parse_with_files(const std::string &query_string) {
+[[maybe_unused]]   Form Form::parse_with_files(const std::string &query_string) {
     Form form;
 
 
@@ -441,5 +441,5 @@
             Form::add_file(fieldName, filePath);
         }
     }
-
+    return {};
 }
