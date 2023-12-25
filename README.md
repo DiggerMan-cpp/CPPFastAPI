@@ -1,2 +1,2 @@
 # CPPFastAPI
-[![Windows](https://github.com/DiggerMan-cpp/CPPFastAPI\actions/workflows/windows.yml/badge.svg)](https://github.com/DiggerMan-cpp/CPPFastAPI/actions/workflows/windows.yml)
+[![Windows](https://github.com/DiggerMan-cpp/CPPFastAPI/actions/workflows/windows.yml/badge.svg)](https://github.com/DiggerMan-cpp/CPPFastAPI/actions/workflows/windows.yml)
