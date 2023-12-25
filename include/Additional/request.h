@@ -1,10 +1,9 @@
 #include <string>
 #include <unordered_map>
 #include <sstream>
-#include <windows.h>
 #include <algorithm>
-#include <windows.h>
 #include <winsock2.h>
+#include <windows.h>
 #include <ws2tcpip.h>
 #include <iphlpapi.h>
 #include <winhttp.h>
@@ -12,7 +11,7 @@
 #pragma comment(lib, "winhttp.lib")
 class Request {
 public:
-     static std::string path;
+    static std::string path;
     std::string method;
     static std::string query_params;
     std::string body;
@@ -91,7 +90,7 @@ public:
  *
  * @return The body of the request.
  */
-    [[maybe_unused]] [[nodiscard]] std::string get_body() const;
+    [[maybe_unused]] [[nodiscard]] static std::string get_body() ;
 
 // Uncomment the following when a JSON library is used.
 // /**
@@ -114,7 +113,7 @@ public:
  * @param cookie_name The name of the cookie.
  * @return True if the cookie exists, false otherwise.
  */
-    [[maybe_unused]] [[nodiscard]] bool has_cookie(const std::string& cookie_name) const ;
+    [[maybe_unused]] [[maybe_unused]] [[nodiscard]] static bool has_cookie(const wchar_t *cookie_name) ;
 
 /**
  * @brief Get the uploaded file object from the request.
@@ -142,13 +141,14 @@ private:
         return result;
     }
 
-    static std::unordered_map<std::string, std::string> parse_path_params(const std::string& path) {
+    static std::unordered_map<std::string, std::string> parse_path_params(const std::string& path1) {
         std::unordered_map<std::string, std::string> result;
 
-        size_t questionMarkPos = path.find('?');
+        size_t questionMarkPos = path1.find('?');
 
         if (questionMarkPos != std::string::npos) {
-            std::string pathParams = path.substr(questionMarkPos + 1);
+            std::string pathParams = path1.substr(questionMarkPos + 1);
+
             std::istringstream iss(pathParams);
 
             std::string param;
@@ -168,7 +168,7 @@ private:
 
 
     [[nodiscard]] static std::unordered_map<std::string, std::string> parse_headers(
-            std::basic_string<char, std::char_traits<char>, std::allocator<char>> headers) {
+            const std::basic_string<char, std::char_traits<char>, std::allocator<char>>& headers) {
         std::unordered_map<std::string, std::string> result;
 
         std::istringstream iss(headers);
@@ -192,7 +192,7 @@ private:
         return result;
     }
 
-    [[maybe_unused]] void parse_cookies(const std::string& cookiesStr, std::unordered_map<std::string, std::string>& cookies) const {
+    [[maybe_unused]] static void parse_cookies(const std::string& cookiesStr, std::unordered_map<std::string, std::string>& cookies) {
         std::istringstream iss(cookiesStr);
         std::string cookie;
         while (std::getline(iss, cookie, ';')) {
