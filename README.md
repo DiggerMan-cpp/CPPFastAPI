@@ -1,6 +1,45 @@
 # CPPFastAPI
 [![Windows](https://github.com/DiggerMan-cpp/CPPFastAPI/actions/workflows/windows.yml/badge.svg)](https://github.com/DiggerMan-cpp/CPPFastAPI/actions/workflows/windows.yml)
 
+## CppFastAPI Class
+
+The `CppFastAPI` class is a C++ framework inspired by FastAPI, designed to simplify the creation of web applications with a focus on fast development, performance, and type safety. It provides a declarative syntax for defining routes, handling requests, and setting up middleware.
+
+### Features:
+
+1. **Routing System:**
+   - Define routes using a simple and expressive syntax similar to FastAPI.
+   - Specify HTTP methods (GET, POST, etc.) and route paths effortlessly.
+
+2. **Request Handling:**
+   - Handle incoming requests with ease using lambda functions or other callable objects.
+   - Utilize the `Request` and `Response` classes to encapsulate request and response data.
+
+3. **Middleware Support:**
+   - Apply middleware functions to process requests before reaching the main handler.
+   - Add custom middleware for tasks such as logging, authentication, and response compression.
+
+4. **Error Handling:**
+   - Set an application-wide error handler to manage errors consistently.
+   - Handle 404 Not Found errors with a default handler or a custom one.
+
+5. **Static File Serving:**
+   - Serve static files by adding a static file handler with a specified path prefix and directory.
+
+6. **Session Support:**
+   - Enable sessions with session encryption and decryption using a secret key.
+
+7. **Response Compression:**
+   - Enable response compression (e.g., gzip) to optimize data transfer.
+
+8. **Configuration Options:**
+   - Configure application settings such as the maximum request body size and maximum concurrent connections.
+
+9. **Initialization and Cleanup:**
+   - Initialize and cleanup resources using the `Initialize` and `Uninitialize` methods.
+   - Properly manage Winsock initialization for networking.
+
+
 ## Form Class
 
 The `Form` class provides functionality for working with form data, including fields with multiple values and file attachments.
