@@ -1,4 +1,7 @@
-# CPPFastAPI
+# CppFastAPI
+
+CppFastAPI is a C++ framework inspired by FastAPI, simplifying web application development with a focus on speed, type safety, and ease of use. Define routes, handle requests, and apply middleware effortlessly. Enjoy features like session support, response compression, and flexible error handling. Initialize and clean up resources with provided methods. A high-level interface for building robust and performant web applications in C++.
+
 [![Windows](https://github.com/DiggerMan-cpp/CPPFastAPI/actions/workflows/windows.yml/badge.svg)](https://github.com/DiggerMan-cpp/CPPFastAPI/actions/workflows/windows.yml)
 
 ## CppFastAPI Class
